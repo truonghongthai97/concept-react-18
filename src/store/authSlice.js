@@ -87,7 +87,7 @@ const createAuthSlide = (set, get) => ({
 
   getPosts: async () => {
     try {
-      const posts = await authService.getPosts();
+      await authService.getPosts();
     } catch (error) {
       return Promise.reject(error);
     }

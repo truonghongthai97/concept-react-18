@@ -9,8 +9,10 @@ const AdminLayout = () => {
       <div>
         <header>Header</header>
         <aside>
-          Sidebar |<Link to="/admin/about">About</Link> |{" "}
-          <Link to="/admin/dashboard">Dashboard</Link>
+          Sidebar |
+          <Link to="/admin/about">About | </Link>
+          <Link to="/admin/dashboard">Dashboard | </Link>
+          <Link to="/admin/chat">Chat</Link>
         </aside>
         <main>
           <Outlet />

@@ -7,13 +7,14 @@ import useStore from "../store/useStore";
 const DashboardPage = lazy(() => import("../pages/Dashboard"));
 const LoginPage = lazy(() => import("../pages/Login"));
 const AboutPage = lazy(() => import("../pages/About"));
+const ChatPage = lazy(() => import("../pages/Chat"));
 
 const afterLoggedInLoader = () => {
   const { isLoggedIn } = useStore.getState().authSlide;
 
-  // if (isLoggedIn) {
-  //   return redirect("/admin/dashboard");
-  // }
+  if (isLoggedIn) {
+    return redirect("/admin/dashboard");
+  }
 };
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <AboutPage />,
+      },
+      {
+        path: "chat",
+        element: <ChatPage />,
       },
     ],
   },
